@@ -33,18 +33,18 @@ public class MainActivity extends AppCompatActivity {
         back=findViewById(R.id.buttonc);
         equal=findViewById(R.id.buttonequal);
 
-        calciPresenter.result1.observe(this, new Observer<String>() {
+        calciPresenter.inputResult.observe(this, new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                output.setText(s);
-                input.setText("");
+                output.setText("");
+                input.setText(s);
             }
         });
 
-        calciPresenter.result2.observe(this, new Observer<String>() {
+        calciPresenter.outputResult.observe(this, new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                input.setText(s);
+                output.setText(s);
             }
         });
 
