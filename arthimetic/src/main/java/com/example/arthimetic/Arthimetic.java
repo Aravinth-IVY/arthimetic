@@ -1,7 +1,7 @@
 package com.example.arthimetic;
 
 public class Arthimetic {
-    public static float Add(float a,float b){
+    public static float Add(float a, float b){
         float c=a+b;
         return c;
     }
