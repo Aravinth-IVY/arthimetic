@@ -7,8 +7,8 @@ import com.example.arthimetic.Arthimetic;
 
 public class CalciPresenter extends Arthimetic {
     String input="";
-    public MutableLiveData<String> result1 = new MutableLiveData<String>();
-    public MutableLiveData<String> result2 = new MutableLiveData<String>();
+    public MutableLiveData<String> inputResult = new MutableLiveData<String>();
+    public MutableLiveData<String> outputResult = new MutableLiveData<String>();
 
     public void onothers(final String data) {
         input=input+data;
@@ -19,25 +19,25 @@ public class CalciPresenter extends Arthimetic {
             String str[] = data.split("\\+");
             float a=Float.parseFloat(str[0]);
             float b=Float.parseFloat(str[1]);
-            result2.postValue(String.valueOf(Arthimetic.Add(a,b)));
+            outputResult.postValue(String.valueOf(Arthimetic.Add(a,b)));
         }
         else if(data.contains("-")){
             String str[] = data.split("\\-");
             float a=Float.parseFloat(str[0]);
             float b=Float.parseFloat(str[1]);
-            result2.postValue(String.valueOf(Arthimetic.sub(a,b)));
+            outputResult.postValue(String.valueOf(Arthimetic.sub(a,b)));
         }
         else if(data.contains("*")){
             String str[] = data.split("\\*");
             float a=Float.parseFloat(str[0]);
             float b=Float.parseFloat(str[1]);
-            result2.postValue(String.valueOf(Arthimetic.mul(a,b)));
+            outputResult.postValue(String.valueOf(Arthimetic.mul(a,b)));
         }
         else if(data.contains("/")){
             String str[] = data.split("\\/");
             float a=Float.parseFloat(str[0]);
             float b=Float.parseFloat(str[1]);
-            result2.postValue(String.valueOf(Arthimetic.div(a,b)));
+            outputResult.postValue(String.valueOf(Arthimetic.div(a,b)));
         }
     }
 }
